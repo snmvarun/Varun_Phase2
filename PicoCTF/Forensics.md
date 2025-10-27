@@ -2,10 +2,10 @@
 Figure out how they moved the flag.
 
 ## Solution:
-![alt text](image.png)
+![TFTP filter Wireshark](image.png)
 First I download the given file to check the type to be a wireshark capture file, I open it in wireshark and then upon analysing, there was a lot of data having the tftp protocol, so I applied a filter to only display tftp protocol data and then exported the objects from tftp
 
-![alt text](image-1.png)
+![Exported Files](image-1.png)
 These are the files that were exported from wireshark. Opening the instructions and plan text file, I applied trial and error to check what type of way the information is changed in to figure out that it is ciphered in ROT13, upon decoding, instructions gave: "TFTPDOESNTENCRYPTOURTRAFFICSOWEMUSTDISGUISEOURFLAGTRANSFERFIGUREOUTAWAYTOHIDETHEFLAGANDIWILLCHECKBACKFORTHEPLAN"; for plan it gave: "IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS". Then I downloaded steghide onto linux to inspect hidden data in the pictures by extracting.
 
 ```bash
@@ -48,13 +48,13 @@ picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}
 We found this file. Recover the flag.
 
 ## Solution:
-![alt text](image-2.png)
+![HxD editor](image-2.png)
 First opening the file, I realised it was corrupt and a type of .bmp file so I opened it on HxD and analysed it but got nothing much, so I opened multiple functioning .bmp files in the HxD editor and I noticed a common factor which work but doesnt lie in the file. 
 
-![alt text](image-3.png) 
+![Edits to HxD editor](image-3.png) 
 So I corrected this in HxD and saved it. I also changed the extention and renamed the file to end it with .bmp and then opened it to find the next picture 
 
-![alt text](tunn3l_v1s10n-1.bmp)
+![Hidden image file](tunn3l_v1s10n-1.bmp)
 To check more hidden details I used exiftool and checked its properties. 
 
 ```bash
@@ -86,7 +86,7 @@ Megapixels                      : 0.347
 ```
 analysing, the height of the file felt unusual and less, and as the challenge name hints saying "tunnel vision" I thought of thinking of a way to increase the height pixels, so I opened the file on HxD again to change its resolution by editing a few hex values targetting the image height, to about 800 pixels and 800 in hex is 0x320
 
-![alt text](tunn3l_v1s10n-2.bmp)
+![Fixed Hidden Image File](tunn3l_v1s10n-2.bmp)
 and as I change the appropriate hex value in HxD and increase the resolution, I get the flag 
 
 ## Flag:
@@ -115,9 +115,9 @@ picoCTF{qu1t3_a_v13w_2020}
 Decode this message from the moon.
 
 ## Solution:
-![alt text](image-4.png)
+![Spectrogram](image-4.png)
 First upon researching, the moon landing pictures were sent back by SSTV system, keeping that in mind I thought of opening the file in a spectrogram in Audacity to find pattern at the beginning of the spectrogram, almost like a digital waveform of binary, which similarly is a hint towards SSTV broadcasting system.
-![alt text](image-5.png)
+![SSTV Decoded image](image-5.png)
 So I used an online SSTV decoder and applied it to the message.wav file to find this image with the flag written on it.
 
 ## Flag:
