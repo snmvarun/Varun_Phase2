@@ -43,7 +43,6 @@ def dynamic_xor_encrypt(plaintext, text_key):
         k += key_char
         encrypted_char = chr(ord(char) ^ ord(key_char)) #XOR operation
         cipher_text += encrypted_char #result
-        print(k)
     return cipher_text      #function based on XOR cipher to encrypt/decrypt
 
 p = 97
