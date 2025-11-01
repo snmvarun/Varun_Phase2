@@ -280,10 +280,10 @@ snmvarun@DESKTOP-16J7ALL:/mnt/d/Cryptonite/PicoCTF/Hardware$ r2 -A ./firmware.el
 0x000000c8  0e94 bb00                                ....
 [0x00000068]>
 ```
-![alt text](image-3.png)
+![alt text](image-5.png)
 I passed 100 bytes into the XOR decrypter and then passed the output into an ASCII converter to get the correct flag.
 
-![alt text](image-4.png)
+![alt text](image-6.png)
 
 
 ## Flag:
