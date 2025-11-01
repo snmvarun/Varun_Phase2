@@ -295,12 +295,12 @@ TFCCTF{Th1s_1s_som3_s1mpl3_4rdu1no_f1rmw4re}
 ## Concepts learnt:
 
 - How to disassemble executables made for microcontrolling.
-- 
+- How to understand basic chain of assembly
+
 
 ## Notes:
 
-- Include any alternate tangents you went on while solving the challenge, including mistakes & other solutions you found.
-- 
+- None
 
 ## Resources:
 
