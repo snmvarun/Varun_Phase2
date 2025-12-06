@@ -47,7 +47,7 @@ nite{n0w_y0u_kn0w_ab0ut_PNG_chunk5}
 * I learned that a valid PNG image must contain an IHDR chunk, one or more IDAT chunks, and an IEND chunk, with IHDR at the start of the file and IEND at the end of the file, I pressed ctrl+f to search for these chunks in the Decoded text searcher, to find none, but after some observation, the headers were present but in the swapped letter case, I converted "ihdr" to IDHR in the decoded text and the same with idat and iend chunks.
 * Saved the file to get the fixed png file showing: 
 
-![nutrela](nutrela.png)  
+![nutrela](./Assets/nutrela.png)  
 
 ## Concepts Learnt
 * The hexdump of a png file and what are its chunks
