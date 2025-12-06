@@ -69,10 +69,10 @@ nite{thus_sp0k3_th3_n3tw0rk_f0r3ns1cs_4n4lyst}
 * I went through the conversation a little and extracted the password as "b3y0ndG00dand3vil"
 * Then I found another decoded TCP stream that showed content starting with Rar! which indicated a zipped file
 
-![psh](image.png)
-![password?](image-1.png)
-![password](image-2.png)
-![Rar!](image-3.png)
+![psh](./Assets/image.png)
+![password?](./Assets/image-1.png)
+![password](./Assets/image-2.png)
+![Rar!](./Assets/image-3.png)
 
 * So I changed it to show as RAW content and then saved the file
 
@@ -116,7 +116,7 @@ GCTF{m0zarella_f1ref0x_p4ssw0rd}
 * First I opened the file using WINRAR to get a .ad1 file, now to open a .ad1 file and inspect it I downloaded FTK Imager. 
 * I Opened the file in the FTK Imager and looked for something according to the hints given in the challenge desc.
 * I found a folder in the the path "GIC2024\AppData\Roaming\Mozilla\Firefox\Profiles\j4gjesg4.default-release" and found the login.json and key4.db inthe file and exported all the entire folder onto my laptop folder named - "Firefox_dump".
-![logins and key4](image-4.png)
+![logins and key4](./Assets/image-4.png)
 
 * Then I understood that login.json had username and passwords that were encrypted and the key4.db is the key to decrypt.
 * I ran a decryption algorithm by installing firefox_decrypt on github and then I decrypted it   
@@ -334,7 +334,7 @@ snmvarun@DESKTOP-16J7ALL:~/volatility$
 * I catted the information in consoles.txt to find the info ```ZmxhZ3t0aDFzXzFzX3RoM18xc3Rfc3Q0ZzMhIX0=``` which is very likely to be a base64 encoded code(Because of the = sign at the end which implies padding).
 
 * So I used an online decoder to decode to get the first flag
-![base64](image-5.png)
+![base64](./Assets/image-5.png)
 
 ### Stage 2 - mspaint
 * First I used memdump plugin with the PID of mspaint.exe which makes a 2424.dmp file which has that process' memory dump.
@@ -347,14 +347,14 @@ snmvarun@DESKTOP-16J7ALL:~/volatility$
 * Then finally playing around with the width gave the image clear image finally at width = 1845 in inverse
 * I then simply flipped it horizontally then vertically to get the flag written out.
 
-![Flag](image-6.png)
+![Flag](./Assets/image-6.png)
 
 ### Stage 3 - winRAR
 * The memory dump also consisted of WinRAR.exe which probably contained a compressed archive. 
 * After searching and grepping I found Important.rar file and dumped it using dumpfiles plugin.
 * After that I found the NTLM Hash(4th field of the hashdump of the profile) and changed the character all to uppercase and then decompressed the contents of Important.rar file to enter the NTLM Hash as the password to find the flag.
 
-![flag3](flag3.png)
+![flag3](./Assets/flag3.png)
 
 ## Notes
 * = at the end of a code implies padding which indicates Base64 code, aswell as the number of characters to be divisible by 4
